@@ -1,0 +1,539 @@
+/* PayTales: Track & Impact Hub (Donor Transparency Page) Styles */
+
+.impact-hub-wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem 1.5rem;
+  width: 100%;
+}
+
+/* Hub Header */
+.hub-header {
+  margin-bottom: 2.5rem;
+}
+
+.hub-kicker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.hub-title {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.hub-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 780px;
+  line-height: 1.6;
+}
+
+/* Overall Transparency Scoreboard */
+.transparency-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.stat-pill-card {
+  background: rgba(16, 28, 48, 0.75);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-pill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.stat-pill-card.highlight-card {
+  border-color: rgba(42, 157, 143, 0.5);
+  background: rgba(14, 106, 106, 0.2);
+}
+
+.stat-pill-card.highlight-card::before {
+  background: linear-gradient(90deg, transparent, var(--teal-bright), transparent);
+}
+
+.pill-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1.1;
+}
+
+.stat-pill-card.highlight-card .pill-number {
+  color: var(--teal-bright);
+}
+
+.pill-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e2e8f0;
+  margin-top: 0.35rem;
+}
+
+.pill-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+}
+
+/* Main Hub Grid */
+.hub-main-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.section-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.section-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  background: rgba(42, 157, 143, 0.15);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(42, 157, 143, 0.3);
+}
+
+.pulse-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.pulse-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
+  animation: pulse 1.8s infinite;
+}
+
+/* Chapter Checkpoint Pipeline Cards */
+.checkpoint-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pipeline-card {
+  background: rgba(16, 28, 48, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.pipeline-card:hover {
+  border-color: rgba(201, 169, 110, 0.4);
+  background: rgba(20, 34, 59, 0.8);
+  transform: translateY(-2px);
+}
+
+.pipeline-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ch-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+}
+
+.pipeline-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.15rem 0 0.25rem 0;
+}
+
+.pipeline-cause {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.loc-text {
+  color: #cbd5e1;
+}
+
+.jump-story-btn {
+  background: rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.jump-story-btn:hover {
+  background: var(--gold-primary);
+  color: #060b14;
+}
+
+/* Funding Progress Bar */
+.pipeline-progress-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.pipeline-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.pipeline-pct {
+  font-weight: 800;
+  color: var(--teal-bright);
+}
+
+.pipeline-bar-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pipeline-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal-primary), var(--gold-primary));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* Stepper Track */
+.stepper-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #0f172a;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.step-node.completed .step-circle {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.step-node.in-progress .step-circle {
+  border-color: var(--gold-light);
+  background: rgba(201, 169, 110, 0.2);
+  color: var(--gold-light);
+  box-shadow: 0 0 10px rgba(201, 169, 110, 0.4);
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  line-height: 1.3;
+}
+
+.step-date {
+  font-size: 0.65rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+/* Right Column: User Ledger & Live Timeline */
+.hub-feed-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.user-ledger-box {
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.15), rgba(16, 28, 48, 0.9));
+  border: 1px solid var(--gold-primary);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ledger-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.ledger-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--gold-light);
+}
+
+.ledger-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.ledger-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.item-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-left strong {
+  color: #4ade80;
+  font-size: 0.95rem;
+}
+
+.ledger-cause {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ledger-hash {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--gold-light);
+}
+
+.ledger-date {
+  font-size: 0.68rem;
+  color: #64748b;
+}
+
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 11px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-entry {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 5px;
+  top: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--teal-primary);
+  border: 3px solid #060b14;
+  box-shadow: 0 0 8px var(--teal-glow);
+}
+
+.entry-card {
+  background: rgba(16, 28, 48, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.15rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.entry-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+}
+
+.entry-time {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.entry-agency {
+  color: var(--teal-bright);
+  font-weight: 700;
+}
+
+.entry-headline {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.entry-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.entry-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.entry-cause-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: rgba(201, 169, 110, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.entry-hash {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.inline-story-link {
+  background: transparent;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--teal-bright);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Responsiveness for Track Hub */
+@media (max-width: 1024px) {
+  .transparency-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hub-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .transparency-stats-strip {
+    grid-template-columns: 1fr;
+  }
+  .stepper-track {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.25rem;
+  }
+}
