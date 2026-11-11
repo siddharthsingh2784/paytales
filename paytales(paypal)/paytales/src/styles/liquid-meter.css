@@ -1,0 +1,192 @@
+/* PayTales: Circular Liquid Progress Vessel (#meter) Styles */
+
+#meter {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.liquid-vessel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vintage Brass / Gilded Bezel Rim */
+.vessel-rim {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 45deg,
+    #c9a96e 0%,
+    #ffe699 25%,
+    #8f723e 50%,
+    #e3c57a 75%,
+    #c9a96e 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  padding: 4px;
+}
+
+.vessel-ticks {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(60, 40, 10, 0.45);
+}
+
+/* Glass Spherical Container */
+.vessel-glass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f0f7f7 0%, #d4e8e8 70%, #a7cccc 100%);
+  overflow: hidden;
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 -6px 16px rgba(14, 106, 106, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass Reflection Sheen */
+.glass-reflection {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  right: 20px;
+  height: 45px;
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Animated SVG Liquid Waves */
+.liquid-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.wave {
+  transition: d 0.25s ease-out;
+}
+
+.wave-front {
+  animation: waveSloshFront 3.8s ease-in-out infinite alternate;
+}
+
+.wave-back {
+  animation: waveSloshBack 5.2s ease-in-out infinite alternate;
+}
+
+@keyframes waveSloshFront {
+  0% { transform: scaleX(1) translateX(0); }
+  50% { transform: scaleX(1.04) translateX(-2px); }
+  100% { transform: scaleX(0.98) translateX(2px); }
+}
+
+@keyframes waveSloshBack {
+  0% { transform: scaleX(0.96) translateX(2px); }
+  50% { transform: scaleX(1.02) translateX(-1px); }
+  100% { transform: scaleX(1.05) translateX(-2px); }
+}
+
+/* Micro-bubbles floating up */
+.bubbles-container {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  animation: bubbleRise 4s infinite linear;
+}
+
+.bubble.b1 { left: 30%; width: 5px; height: 5px; animation-duration: 3.2s; animation-delay: 0.2s; }
+.bubble.b2 { left: 60%; width: 4px; height: 4px; animation-duration: 4.1s; animation-delay: 1.2s; }
+.bubble.b3 { left: 45%; width: 6px; height: 6px; animation-duration: 3.6s; animation-delay: 2.1s; }
+.bubble.b4 { left: 75%; width: 3px; height: 3px; animation-duration: 4.8s; animation-delay: 0.8s; }
+
+@keyframes bubbleRise {
+  0% {
+    bottom: 10px;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    bottom: 85%;
+    opacity: 0;
+    transform: translateX(8px);
+  }
+}
+
+/* Inner Vessel Typography Overlay */
+.vessel-content {
+  position: relative;
+  z-index: 7;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.percent-val {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0c2b2f;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.percent-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #164e63;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+.amount-sub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 0.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}

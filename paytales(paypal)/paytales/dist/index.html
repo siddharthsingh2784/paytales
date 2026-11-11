@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayTales: Turn a story into real impact</title>
+    <meta name="description" content="Story-driven micro-donation platform for rural tragedies and climate disasters, built inside an interactive vintage 3D split-screen digital book interface." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Luxury Serif 'Fraunces' & Body Sans 'Figtree' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <script type="module" crossorigin src="/assets/index-Cij7BWWs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CeaSHQBV.css">
+  </head>
+  <body>
+    <!-- Background Atmosphere Stars & Ambient Lighting -->
+    <div class="app-atmosphere">
+      <div class="ambient-dust-grid"></div>
+    </div>
+
+    <!-- App Master Shell -->
+    <div class="app-shell">
+      <!-- Top Navigation Header -->
+      <header class="top-nav">
+        <!-- Brand Logo & Tagline -->
+        <a class="brand-anchor" id="brandHomeBtn" title="PayTales: Return to cover">
+          <img src="/paytales_logo.png" alt="PayTales Official Logo" class="brand-logo-img" />
+          <div class="brand-text-col">
+            <span class="brand-title">PayTales <span class="brand-gold">✦</span></span>
+            <span class="brand-tagline">Turn a story into real impact</span>
+          </div>
+        </a>
+
+        <!-- Center View Switcher: Book vs Track Impact -->
+        <nav class="view-tabs-switch" aria-label="Main Navigation">
+          <button type="button" class="nav-tab-btn active" id="tabBookBtn">
+            <span>📖</span> Digital Book
+          </button>
+          <button type="button" class="nav-tab-btn" id="tabImpactBtn">
+            <span>📍</span> Track Impact
+          </button>
+        </nav>
+
+        <!-- Right Action Controls -->
+        <div class="nav-actions">
+          <!-- Realtime Sync Status Badge -->
+          <div class="sync-status-badge connecting" id="syncStatusBadge" title="Firebase Realtime Database Status">
+            <span class="sync-dot"></span>
+            <span id="syncStatusText">Connecting...</span>
+          </div>
+
+          <!-- Table of Contents Quick Drawer Button -->
+          <button type="button" class="toc-toggle-btn" id="tocBtn" title="View all 10 story chapters">
+            <span>📑</span> Stories
+          </button>
+
+          <!-- Ambient Soundscape Generator Toggle -->
+          <button type="button" class="sound-toggle-top-btn" id="ambientSoundBtn" title="Toggle peaceful ambient rain/wind soundscape">
+            <span id="ambientSoundIcon">🌧️</span> Sound
+          </button>
+
+          <!-- Header button "Edit chapters" opening Admin CMS modal -->
+          <button type="button" class="admin-open-btn" id="adminOpenBtn" title="Open Administrative CMS">
+            <span>🗝️</span> Edit chapters
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Views Container -->
+      <div class="main-view-container">
+        <!-- View 1: 3D Interactive Digital Book -->
+        <section class="view-section active" id="bookView">
+          <div id="bookContainer">
+            <!-- Injected by BookController -->
+          </div>
+        </section>
+
+        <!-- View 2: NEW Feature - Track & Impact Hub (Donor Transparency Page) -->
+        <section class="view-section" id="impactView">
+          <div id="impactContainer">
+            <!-- Injected by ImpactHub -->
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Quick Table of Contents Popover Modal -->
+    <dialog class="vintage-modal" id="tocDialog">
+      <div class="modal-card" style="width: 580px;">
+        <div class="modal-header-ornament">
+          <span class="gold-gem">◆</span>
+          <span class="ornament-line"></span>
+          <span class="gold-crown">📖</span>
+          <span class="ornament-line"></span>
+          <span class="gold-gem">◆</span>
+        </div>
+        <button class="modal-close-btn" id="closeTocBtn">✕</button>
+        <div class="checkout-header" style="margin-bottom: 1.25rem;">
+          <span class="checkout-sub">TABLE OF CONTENTS</span>
+          <h2 class="checkout-title">10 Disaster Relief Chronicles</h2>
+          <p class="checkout-cause">Select any chapter to immediately turn to its pages</p>
+        </div>
+        <div class="toc-list" id="tocListContainer" style="display: flex; flex-direction: column; gap: 0.65rem; max-height: 60vh; overflow-y: auto;">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Admin CMS Modal (<dialog id="admin">) -->
+    <dialog id="admin" class="vintage-modal admin-dialog">
+      <!-- Injected by AdminCMS -->
+    </dialog>
+
+    <!-- Main JavaScript App Entry -->
+  </body>
+</html>
